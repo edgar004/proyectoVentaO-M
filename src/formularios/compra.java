@@ -25,6 +25,12 @@ public class compra extends javax.swing.JFrame {
     
     public compra() {
         initComponents();
+   
+        datos.getColumnModel().getColumn(6).setMaxWidth(0);
+        datos.getColumnModel().getColumn(6).setMinWidth(0);
+        datos.getTableHeader().getColumnModel().getColumn(6).setMaxWidth(0);
+        datos.getTableHeader().getColumnModel().getColumn(6).setMinWidth(0);
+        datos.getColumnModel().getColumn(6).setResizable(false);
         this.setLocationRelativeTo(null);
       // fecha.setText(fechaActual());
       cargar();
@@ -127,30 +133,14 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
  jButton3.setEnabled(true);
  
  }
-  void actualizarcosto() {
-
-		for (int i = 0; i < datos.getRowCount(); i++) {
-
-			try {
-				PreparedStatement pst = cn.prepareStatement("UPDATE articulo SET "
-						+ "pre_compra ='" + datos.getValueAt(i, 3).toString() + "'"
-						+ " WHERE cod_art ='" + datos.getValueAt(i, 0).toString() + "'");
-
-				pst.executeUpdate();
-
-			} catch (SQLException ex) {
-				JOptionPane.showMessageDialog(null, ex);
-			}
-		}
-
-	}
       public void actualizar_inventario() {
         String codigo_art = "", cantidad_art = "";
         for (int j = 0; j < datos.getRowCount(); j++) {
             codigo_art = (datos.getValueAt(j, 0).toString());
             cantidad_art = (datos.getValueAt(j, 2).toString());
+            float precio_compra = Float.parseFloat((datos.getValueAt(j, 6).toString()));
             try {
-                PreparedStatement psU = cn.prepareStatement("UPDATE articulo SET cant_art=cant_art + '"+cantidad_art+"' where cod_art='" + codigo_art + "' " );
+                PreparedStatement psU = cn.prepareStatement("UPDATE articulo SET cant_art=cant_art + '"+cantidad_art+"' ,valor_inventario=valor_inventario +'"+Float.valueOf(cantidad_art)*precio_compra+"' where cod_art='" + codigo_art + "' " );
                 psU.executeUpdate();
                 // JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS");
             } catch (Exception ex) {
@@ -160,10 +150,9 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         //buscar_articulo.requestFocus();
     }
  void sumar() {
-        DecimalFormat formateador = new DecimalFormat("RD$###,###,###,###.##");
-         String jtotal = "", jitbis = "",jgeneral = "";
-         float cv1 = 0 , cv2 = 0 , cv3 = 0;
-         float suma1 = 0, suma2 = 0, suma3 = 0;
+         String jtotal = "";
+         float cv1 = 0 , cv2 = 0;
+         float suma1 = 0, suma2 = 0;
          
           for (int j = 0; j < datos.getRowCount(); j++) {
             jtotal = (datos.getValueAt(j, 4).toString());
@@ -211,15 +200,16 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
       
        
 
-        Object[] registros = new Object[6];
+        Object[] registros = new Object[7];
         registros[0] = id.getText();
         
         registros[1] = des_art.getText();
         registros[2] = String.valueOf(cantidad);
         registros[3] = precio3.getText();
-        registros[4] = String.valueOf(total);
+        registros[4] = String.format("%.2f", total).replace(",", ".");
        // registros[5] = String.valueOf(itbis);
         registros[5] = txtcomp.getText();
+        registros[6] = precio;
 
         modelo2.addRow(registros);
 
@@ -244,6 +234,9 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
          }
    
    }
+   
+   
+   
   void Agregardato(){
       
        try {
@@ -343,7 +336,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\contado.png")); // NOI18N
         jLabel5.setText("COMPRA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 150, -1));
 
@@ -417,7 +409,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel2.add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 170, 25));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\lupa.png")); // NOI18N
         jLabel1.setText("BUSCAR");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 90, 30));
 
@@ -460,11 +451,11 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
             },
             new String [] {
-                "CODIGO", "DESCRIPCION", "CANTIDAD", "PRECIO", "IMPORTE", "No.COMPRA"
+                "CODIGO", "DESCRIPCION", "CANTIDAD", "PRECIO", "IMPORTE", "No.COMPRA", "Precio compra"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
+                false, false, false, false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -498,7 +489,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\cruzar.png")); // NOI18N
         jButton3.setText("Cancelar");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.setEnabled(false);
@@ -509,7 +499,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\anadir (1).png")); // NOI18N
         jButton4.setText("Nuevo");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -519,7 +508,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\salida.png")); // NOI18N
         jButton5.setText("Salir");
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -590,7 +578,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 523, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\lupa.png")); // NOI18N
         jLabel9.setText("BUSCAR PRODUCTO");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, 40));
 
@@ -632,7 +619,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.add(cant, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 141, 32));
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\centro-comercial.png")); // NOI18N
         jButton6.setText("Agregar ");
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -736,7 +722,6 @@ limpiar();
         Agregardato();  
  actualizar_inventario();
  AgregarDetalleFactura(); 
- actualizarcosto(); 
   reiniciarJTable(datos);
         reiniciarJTable2(tabla_art);
         cargar();

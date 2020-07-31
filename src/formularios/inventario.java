@@ -29,6 +29,7 @@ public class inventario extends javax.swing.JFrame {
     public inventario() {
         initComponents();
          cargar();
+         jButton2.setVisible(false);
           Timer tiempo = new Timer(100, new inventario.horas());
         tiempo.start();
           Date sistema_fecha =new Date();
@@ -52,7 +53,7 @@ void imprimir01() {
         for (int i = 0; i < inventario.getRowCount(); i++) {
 
             inventario_art mortizar = new inventario_art (inventario.getValueAt(i, 0).toString(),
-                    inventario.getValueAt(i, 1).toString(), inventario.getValueAt(i, 2).toString()+ "");
+                    inventario.getValueAt(i, 1).toString(), inventario.getValueAt(i, 2).toString()+"", inventario.getValueAt(i, 3).toString()+ "");
 
             lista.add(mortizar);
 
@@ -156,8 +157,8 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
      modelo2.getDataVector().clear();
       
 
-        String[] registros = new String[6];
-        String sql = "SELECT cod_art,desc_art,cant_art,pre_venta FROM articulo ";
+        String[] registros = new String[7];
+        String sql = "SELECT cod_art,desc_art,cant_art,pre_venta,valor_inventario FROM articulo ";
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -167,6 +168,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
                 
                 registros[1] = rs.getString("desc_art");
                 registros[2] = rs.getString("cant_art");
+                registros[3] = rs.getString("valor_inventario");
                
                  modelo2.addRow(registros);
                }
@@ -219,11 +221,11 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
 
             },
             new String [] {
-                "CODIGO", "DESCRIPCION", "EXISTENCIA"
+                "CODIGO", "DESCRIPCION", "EXISTENCIA", "VALOR INVENTARIO"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
