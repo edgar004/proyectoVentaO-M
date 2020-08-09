@@ -963,13 +963,13 @@ void guardar_residencial(){
                 + " sector = '"+sector.getText()+"',calle='"+calle.getText()+"',ciudad='"+ciudad.getText()+"',estado='"+estado.getSelectedItem()+"',limite_credito='"+limite_credito.getText()+"',cedula='"+cedula.getText()+"',razon_social='"+razon_social.getText()+"' where idcliente='"+idcliente.getText()+"'");
 
             psU.executeUpdate();
-            JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS CON EXITO");
         } catch (Exception ex) {
             Logger.getLogger(Clientes_mantenimiento.class.getName()).log(Level.SEVERE, null, ex);
         }
         actualizar_residencial();
         actualizar_celular();
         limpiar();   
+           numero_serie();
         
     }//GEN-LAST:event_boton_modificarActionPerformed
 

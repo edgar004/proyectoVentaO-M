@@ -97,7 +97,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
       
 
         String[] registros = new String[6];
-        String sql = "SELECT cod_art,desc_art,cant_art,pre_venta FROM articulo  where CONCAT (cod_art,'',desc_art)LIKE '%"+valor+"%'";
+        String sql = "SELECT cod_art,desc_art,cant_art,pre_venta,valor_inventario FROM articulo  where CONCAT (cod_art,'',desc_art)LIKE '%"+valor+"%'";
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -107,6 +107,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
                 
                 registros[1] = rs.getString("desc_art");
                 registros[2] = rs.getString("cant_art");
+                 registros[2] = rs.getString("valor_inventario");
                
                  modelo2.addRow(registros);
                }
@@ -200,14 +201,13 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("INVENTARIO");
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/loupe_78956.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jLabel1.setText("PRODUCTOS");
 
-        buscar.setBackground(new java.awt.Color(102, 204, 255));
         buscar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         buscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -252,6 +252,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
         fecha.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\inventario.png")); // NOI18N
         jLabel2.setText("INVENTARIO");
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -271,8 +272,8 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(33, 33, 33)
+                        .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(buscar))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -295,10 +296,10 @@ DefaultTableModel modelo2 = (DefaultTableModel)inventario.getModel();
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(fecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(buscar))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)

@@ -32,10 +32,26 @@ import javax.swing.JOptionPane;
             if (rs!=null){
             if (rs.next()){
                 registros[1] = rs.getString("idempleado");
+                
+                
+                    Statement stmtEmpleado=cn.createStatement();
+                 ResultSet rsEmpleado=stmtEmpleado.executeQuery("SELECT estado, nombre, apellido FROM empleado WHERE (idempleado='"+rs.getString("idempleado")+"')");
+                  
+                   if (rsEmpleado.next()){
+                 if(rsEmpleado.getString("estado").equals("INACTIVO")){
+                          JOptionPane.showMessageDialog(null, "ACTUALMENTE NO SE ENCUENRA ACTIVO DEBE COMUNICARSE CON EL ADMINISTRADOR");
+                               name.setText("");
+                          password.setText("");
+                           name.requestFocus();
+                          return;
+                    }
+                 
                 Statement stmtRoles=cn.createStatement();
 
                  ResultSet rsRoles=stmtRoles.executeQuery("SELECT acceso,permisos_usuarios.aplicaciones_modulos FROM roles_usuario inner join permisos_usuarios on permisos_usuarios.id_permiso_usuario =roles_usuario.id_permiso_usuario  WHERE (id_usuario='"+rs.getString("idempleado")+"')");
                      
+                 
+                 
                    Menu menu=new Menu();
 
                     try{
@@ -75,6 +91,17 @@ import javax.swing.JOptionPane;
                                         menu.menuConsultaCompras.setVisible(false);
                                     }
                                      break;
+                                     case "Compra":
+                                      if(rsRoles.getString("acceso").equals("0")){
+                                        menu.menuCompra.setVisible(false);
+                                    }
+                                     break;
+                                      case "Inventario":
+                                      if(rsRoles.getString("acceso").equals("0")){
+                                        menu.menuInventario.setVisible(false);
+                                    }
+                                     break;
+                                     
                                 default:
                                     break;
                             }
@@ -85,10 +112,13 @@ import javax.swing.JOptionPane;
                     }
                                
                             idusuario = registros[1];
-               
+                  name.setText("");
+                password.setText("");
+                name.requestFocus();
                             temporal global = new temporal();
-                    global.setTexto(idusuario.trim()); // el trim para eliminar los espacios en blanco sobrantes
-            
+                    global.setTexto(idusuario.trim());
+                     global.setNombre(rsEmpleado.getString("nombre")+" " + rsEmpleado.getString("apellido"));// el trim para eliminar los espacios en blanco sobrantes
+                     menu.usuario_logeando.setText("Online: " + rsEmpleado.getString("nombre")+" " + rsEmpleado.getString("apellido"));
                       menu.setVisible(true);
                       menu.setLocationRelativeTo(null); 
               
@@ -99,8 +129,10 @@ import javax.swing.JOptionPane;
                 name.requestFocus();
             }
             }   
+            }
             
         } catch (Exception e) {
+                 JOptionPane.showMessageDialog(null, e.toString());
         }
         
     

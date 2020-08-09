@@ -132,6 +132,10 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
  jButton2.setEnabled(true);
  jButton3.setEnabled(true);
  
+ 
+ 
+ 
+         
  }
       public void actualizar_inventario() {
         String codigo_art = "", cantidad_art = "";
@@ -336,6 +340,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\factura.png")); // NOI18N
         jLabel5.setText("COMPRA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 150, -1));
 
@@ -578,8 +583,9 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 523, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jLabel9.setText("BUSCAR PRODUCTO");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, 40));
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 220, 220, 40));
 
         buscar_articulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         buscar_articulo.addActionListener(new java.awt.event.ActionListener() {
@@ -619,6 +625,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.add(cant, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 141, 32));
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\centro-comercial.png")); // NOI18N
         jButton6.setText("Agregar ");
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addActionListener(new java.awt.event.ActionListener() {

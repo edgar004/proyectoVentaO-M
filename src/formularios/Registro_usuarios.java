@@ -166,7 +166,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel1.setText("CODIGO");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 24, -1, 23));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 14, -1, 40));
 
         idempleado.setEditable(false);
         idempleado.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -175,11 +175,11 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 idempleadoActionPerformed(evt);
             }
         });
-        jPanel2.add(idempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 22, 260, -1));
+        jPanel2.add(idempleado, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 22, 260, 25));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel2.setText("NOMBRE ");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, -1, 23));
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 54, -1, 30));
 
         nombre.setEditable(false);
         nombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -189,7 +189,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 nombreActionPerformed(evt);
             }
         });
-        jPanel2.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 54, 260, -1));
+        jPanel2.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 54, 260, 25));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel3.setText("USUARIO");
@@ -207,7 +207,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 usuarioKeyTyped(evt);
             }
         });
-        jPanel2.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 22, 229, -1));
+        jPanel2.add(usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 22, 229, 25));
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel4.setText("CONTRASEÑA");
@@ -220,11 +220,11 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 passwordActionPerformed(evt);
             }
         });
-        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 54, 229, -1));
+        jPanel2.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 54, 229, 25));
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel5.setText("CONFIRMAR CONTRASEÑA");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 83, -1, 23));
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 83, -1, 30));
 
         password1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         password1.setEnabled(false);
@@ -233,10 +233,11 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 password1ActionPerformed(evt);
             }
         });
-        jPanel2.add(password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 83, 229, -1));
+        jPanel2.add(password1, new org.netbeans.lib.awtextra.AbsoluteConstraints(498, 83, 230, 25));
 
         jButton4.setBackground(new java.awt.Color(153, 153, 153));
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton4.setText("BUSCAR EMPLEADO");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -244,7 +245,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(259, 134, 229, 30));
+        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 160, 40));
 
         combo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         combo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE...", "Administrador", "Empleado", "Supervisor" }));
@@ -253,23 +254,24 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 comboActionPerformed(evt);
             }
         });
-        jPanel2.add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 86, 260, -1));
+        jPanel2.add(combo, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 86, 260, 25));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel8.setText("CARGO");
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 83, 50, 30));
+        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(18, 83, -1, 30));
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ACTIVO", "INACTIVO" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 220, -1));
+        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 110, 230, 25));
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel9.setText("ESTADO");
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, -1, 20));
+        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(449, 110, 50, 30));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 49, 737, -1));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 33, 737, 180));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\mujer (2).png")); // NOI18N
         jLabel10.setText("REGISTRO DE USUARIO");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 8, -1, 23));
 
@@ -335,26 +337,27 @@ public class Registro_usuarios extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(3, 3, 3)
+                .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(guardar_boton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(boton_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(boton_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(guardar_boton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 216, -1, 60));
 
-        jButton5.setBackground(new java.awt.Color(102, 102, 102));
+        jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton5.setText("BUSCAR USUARIOS");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 223, 60));
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 220, 223, 55));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, 980, 290));
 

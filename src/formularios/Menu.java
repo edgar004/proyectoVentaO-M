@@ -46,7 +46,6 @@ public class Menu extends javax.swing.JFrame {
                 registros[1] = rs.getString("apellido");
 
             }
-            lbl1.setText("EMPLEADO" + " " + registros[0] + " " + registros[1]);
 
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, ex);
@@ -58,10 +57,9 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         pn_base = new javax.swing.JPanel();
-        pn_bienvenido = new javax.swing.JPanel();
-        lbl1 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        usuario_logeando = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuCliente = new javax.swing.JMenuItem();
@@ -70,7 +68,7 @@ public class Menu extends javax.swing.JFrame {
         menuUsuario = new javax.swing.JMenuItem();
         jMenu6 = new javax.swing.JMenu();
         menuArticulo = new javax.swing.JMenuItem();
-        jMenuItem3 = new javax.swing.JMenuItem();
+        menuCompra = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         menuFactura = new javax.swing.JMenuItem();
         jMenuItem12 = new javax.swing.JMenuItem();
@@ -81,45 +79,22 @@ public class Menu extends javax.swing.JFrame {
         menuConsultaVenta = new javax.swing.JMenuItem();
         menuConsultaCompras = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenu5 = new javax.swing.JMenu();
+        menuInventario = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("MENU PRINCIPAL");
 
-        pn_base.setBackground(new java.awt.Color(255, 153, 153));
+        pn_base.setBackground(new java.awt.Color(0, 0, 0));
 
-        pn_bienvenido.setOpaque(false);
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\Lines_grid_black-Vector_HD_Wallpaper_1366x768.jpg")); // NOI18N
+        jLabel1.setText("jLabel1");
 
-        lbl1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lbl1.setForeground(new java.awt.Color(255, 255, 0));
-        lbl1.setText("Usuario");
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("BIENVENIDO");
-
-        javax.swing.GroupLayout pn_bienvenidoLayout = new javax.swing.GroupLayout(pn_bienvenido);
-        pn_bienvenido.setLayout(pn_bienvenidoLayout);
-        pn_bienvenidoLayout.setHorizontalGroup(
-            pn_bienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pn_bienvenidoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_bienvenidoLayout.createSequentialGroup()
-                .addContainerGap(142, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(63, 63, 63))
-        );
-        pn_bienvenidoLayout.setVerticalGroup(
-            pn_bienvenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pn_bienvenidoLayout.createSequentialGroup()
-                .addContainerGap(22, Short.MAX_VALUE)
-                .addComponent(lbl1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1))
-        );
+        usuario_logeando.setBackground(new java.awt.Color(255, 255, 255));
+        usuario_logeando.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        usuario_logeando.setForeground(new java.awt.Color(0, 255, 0));
+        usuario_logeando.setText("Oline");
 
         javax.swing.GroupLayout pn_baseLayout = new javax.swing.GroupLayout(pn_base);
         pn_base.setLayout(pn_baseLayout);
@@ -127,17 +102,21 @@ public class Menu extends javax.swing.JFrame {
             pn_baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(pn_baseLayout.createSequentialGroup()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1032, Short.MAX_VALUE)
-                .addComponent(pn_bienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(pn_baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pn_baseLayout.createSequentialGroup()
+                        .addGap(0, 1085, Short.MAX_VALUE)
+                        .addComponent(usuario_logeando, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         pn_baseLayout.setVerticalGroup(
             pn_baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pn_baseLayout.createSequentialGroup()
-                .addContainerGap(617, Short.MAX_VALUE)
-                .addComponent(pn_bienvenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 619, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(usuario_logeando, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -206,14 +185,14 @@ public class Menu extends javax.swing.JFrame {
         });
         jMenu6.add(menuArticulo);
 
-        jMenuItem3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/shoppingcart_compra_12833.png"))); // NOI18N
-        jMenuItem3.setText("COMPRA");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        menuCompra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/shoppingcart_compra_12833.png"))); // NOI18N
+        menuCompra.setText("COMPRA");
+        menuCompra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                menuCompraActionPerformed(evt);
             }
         });
-        jMenu6.add(jMenuItem3);
+        jMenu6.add(menuCompra);
 
         jMenuBar1.add(jMenu6);
 
@@ -330,9 +309,8 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        jMenu5.setText("INVENTARIO");
-        jMenu5.setEnabled(false);
-        jMenu5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        menuInventario.setText("INVENTARIO");
+        menuInventario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
         jMenuItem8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/productos.png"))); // NOI18N
         jMenuItem8.setText("INVENTARIO");
@@ -341,9 +319,9 @@ public class Menu extends javax.swing.JFrame {
                 jMenuItem8ActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem8);
+        menuInventario.add(jMenuItem8);
 
-        jMenuBar1.add(jMenu5);
+        jMenuBar1.add(menuInventario);
 
         jMenu4.setText("SALIR");
         jMenu4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -362,13 +340,13 @@ public class Menu extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pn_base, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(pn_base, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 64, Short.MAX_VALUE))
         );
 
         pack();
@@ -435,11 +413,11 @@ public class Menu extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jMenu6ActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void menuCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuCompraActionPerformed
         compra windows = new compra();
         windows.setVisible(true);
         windows.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_menuCompraActionPerformed
 
     private void menuProveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProveedorActionPerformed
         proveedor windows = new proveedor();
@@ -553,27 +531,26 @@ public class Menu extends javax.swing.JFrame {
     public static javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem12;
     private javax.swing.JMenuItem jMenuItem13;
     private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem5;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JLabel lbl1;
     public javax.swing.JMenuItem menuArticulo;
     public javax.swing.JMenuItem menuCliente;
+    public javax.swing.JMenuItem menuCompra;
     public javax.swing.JMenuItem menuConsultaCompras;
     public javax.swing.JMenuItem menuConsultaVenta;
     public javax.swing.JMenuItem menuEmpleado;
     public javax.swing.JMenuItem menuFactura;
+    public javax.swing.JMenu menuInventario;
     public javax.swing.JMenuItem menuProveedor;
     public javax.swing.JMenuItem menuUsuario;
     private javax.swing.JPanel pn_base;
-    private javax.swing.JPanel pn_bienvenido;
+    public javax.swing.JLabel usuario_logeando;
     // End of variables declaration//GEN-END:variables
 String idusuario = "";
     conectar con = new conectar();
