@@ -88,7 +88,6 @@ public class Menu extends javax.swing.JFrame {
 
         pn_base.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\Lines_grid_black-Vector_HD_Wallpaper_1366x768.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
 
         usuario_logeando.setBackground(new java.awt.Color(255, 255, 255));
@@ -234,7 +233,6 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu8.setText("CUENTAS");
-        jMenu8.setEnabled(false);
         jMenu8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jMenu8.addMenuKeyListener(new javax.swing.event.MenuKeyListener() {
             public void menuKeyPressed(javax.swing.event.MenuKeyEvent evt) {

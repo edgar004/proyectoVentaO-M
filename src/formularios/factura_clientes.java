@@ -43,7 +43,7 @@ public class factura_clientes extends javax.swing.JFrame {
           //fecha1();
          // fecha_2();
          DefaultTableModel modelo2 = (DefaultTableModel)tblcuentacobrar.getModel();
-     modelo2.getDataVector().clear();
+         modelo2.getDataVector().clear();
         String [] registros = new String [9];
          String [] vector = new String [9];
         String sql ="SELECT cliente.nombre,cliente.apellido,factura.fecha,factura.tipo_factura,factura.no_factura,factura.itbis,factura.monto,factura.total FROM cliente,factura where cliente.idcliente=factura.idcliente AND total >=1 ";
@@ -102,7 +102,6 @@ public class factura_clientes extends javax.swing.JFrame {
                 pst.executeUpdate();
                 JOptionPane.showMessageDialog(null, "DATOS ACTUALIZADOS !!");
                 AgregarPago();
-              cargar_fechas(); 
               limpiar();
                 reiniciarJTable3(tblcuentacobrar);
                 reiniciarJTable4(tabla_detalle);
@@ -225,13 +224,13 @@ void cargar_detalle(){
          DefaultTableModel modelo2 = (DefaultTableModel)tabla_detalle.getModel();
      modelo2.getDataVector().clear();
         String [] registros = new String [9];
-        String sql ="SELECT articulo.id_art,articulo.des_art,detalle_fact.cant,detalle_fact.precio,detalle_fact.importe FROM articulo,detalle_fact where articulo.id_art=detalle_fact.id_art and detalle_fact.no_factura='"+idfacture+"' ";
+        String sql ="SELECT articulo.cod_art,articulo.desc_art,detalle_fact.cant,detalle_fact.precio,detalle_fact.importe FROM articulo,detalle_fact where articulo.cod_art=detalle_fact.id_art and detalle_fact.no_factura='"+idfacture+"' ";
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                registros[0]=rs.getString("id_art");
-                registros[1]=rs.getString("des_art");
+                registros[0]=rs.getString("cod_art");
+                registros[1]=rs.getString("desc_art");
                 
                 registros[2]=rs.getString("cant");
                
@@ -799,8 +798,12 @@ void PagoTotal(){
     }//GEN-LAST:event_tblcuentacobrarMouseClicked
 
     private void abonarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_abonarKeyTyped
-        char c = evt.getKeyChar();
-        if (c<'0'  || c >'9') evt.consume();    
+        char caracter = evt.getKeyChar();
+       if (((caracter < '0') || (caracter > '9')) 
+        && (caracter != evt.VK_BACK_SPACE)
+        && (caracter != '.' || abonar.getText().contains(".")) ) {
+            evt.consume();
+} 
     }//GEN-LAST:event_abonarKeyTyped
 
     private void btnrealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnrealizarActionPerformed
