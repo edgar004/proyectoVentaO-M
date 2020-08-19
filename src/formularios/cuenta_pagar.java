@@ -182,8 +182,8 @@ public class cuenta_pagar extends javax.swing.JFrame {
     DefaultTableModel cliente = (DefaultTableModel) tabla2.getModel() ;
              
     String [] datos  = new String[10];
-    String sql = "SELECT detalle_comp.num_compra,articulo.id_art,articulo.des_art,detalle_comp.cantidad,detalle_comp.precio,detalle_comp.importe"
-            + " from contador_compra INNER JOIN detalle_comp ON detalle_comp.num_compra=contador_compra.compra INNER JOIN articulo ON detalle_comp.codigo=articulo.id_art WHERE num_COMPRA= '"+fac.getText()+"'";
+    String sql = "SELECT detalle_comp.num_compra,articulo.cod_art,articulo.desc_art,detalle_comp.cantidad,detalle_comp.precio,detalle_comp.importe"
+            + " from contador_compra INNER JOIN detalle_comp ON detalle_comp.num_compra=contador_compra.compra INNER JOIN articulo ON detalle_comp.codigo=articulo.cod_art WHERE num_COMPRA= '"+fac.getText()+"'";
     
         try {
             Statement st = cn.createStatement();
@@ -191,8 +191,8 @@ public class cuenta_pagar extends javax.swing.JFrame {
             
             while(rs.next()){
              datos[0]=rs.getString("num_COMPRA");  
-                datos[1]=rs.getString("id_art");
-            datos[2]=rs.getString("des_art");
+                datos[1]=rs.getString("cod_art");
+            datos[2]=rs.getString("desc_art");
             datos[3]=rs.getString("cantidad");
             datos[4]=rs.getString("precio");
            

@@ -6,6 +6,14 @@ package formularios;
 import conectar.conectar;
 import static formularios.Clientes_mantenimiento.rnc;
 import static formularios.Clientes_mantenimiento.txt_fecha;
+import static formularios.proveedor.calle;
+import static formularios.proveedor.celular;
+import static formularios.proveedor.ciudad;
+import static formularios.proveedor.razon_social;
+import static formularios.proveedor.representante;
+import static formularios.proveedor.residencial;
+import static formularios.proveedor.rnc;
+import static formularios.proveedor.sector;
 
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
@@ -171,8 +179,52 @@ windows.setLocationRelativeTo(null);
         pre_consumidor.setText("");
         cant.setText("");
         itbis.setText("");
-        txt_fecha.setDate(null);
+         Date fechaActual = new Date();
+        txt_fecha.setDate(fechaActual);
         id_art.requestFocus();
+           jButton1.setEnabled(true);
+    jButton3.setEnabled(false);
+   activar_campos();
+    }
+     
+     
+     void activar_campos(){
+           id_art.setEditable(true);
+        des_art.setEditable(true);
+        talla.setEditable(true);
+        id_marca.setEditable(true);
+        pre_com.setEditable(true);
+        pre_mayor.setEditable(true);
+        pre_consumidor.setEditable(true);
+        reorden.setEditable(true);
+        id_proveedor.setEditable(true);
+        id_proveedor.setEditable(true);
+        itbis.setEditable(true);
+        cant.setEditable(true);
+        
+        jButton1.setEnabled(true);
+        jButton3.setEnabled(true);
+        
+    }
+     
+     void desactivar_campos(){
+           id_art.setEditable(false);
+        des_art.setEditable(false);
+        talla.setEditable(false);
+        id_marca.setEditable(false);
+        pre_com.setEditable(false);
+        pre_mayor.setEditable(false);
+        pre_consumidor.setEditable(false);
+        reorden.setEditable(false);
+        id_proveedor.setEditable(false);
+        id_proveedor.setEditable(false);
+        itbis.setEditable(false);
+        cant.setEditable(false);
+        
+         guardar.setEnabled(false);
+        jButton1.setEnabled(false);
+        jButton3.setEnabled(false);
+        
     }
      void limpiar(){
         id_art.setText("");
@@ -188,7 +240,9 @@ windows.setLocationRelativeTo(null);
         pre_consumidor.setText("");
         cant.setText("");
         itbis.setText("");
-        txt_fecha.setDate(null);
+          Date fechaActual = new Date();
+        txt_fecha.setDate(fechaActual);
+        desactivar_campos();
         
     }
    
@@ -300,6 +354,7 @@ windows.setLocationRelativeTo(null);
         jLabel2.setText("CODIGO ");
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 70, 30));
 
+        id_art.setEditable(false);
         id_art.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         id_art.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,6 +367,7 @@ windows.setLocationRelativeTo(null);
         jLabel3.setText("DESCRIPCION");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 100, 30));
 
+        des_art.setEditable(false);
         des_art.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         des_art.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -337,6 +393,7 @@ windows.setLocationRelativeTo(null);
         jLabel7.setText("REORDEN");
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 70, 30));
 
+        cant.setEditable(false);
         cant.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###0.###"))));
         cant.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         cant.addActionListener(new java.awt.event.ActionListener() {
@@ -362,6 +419,7 @@ windows.setLocationRelativeTo(null);
         jLabel11.setText("PRECIO X MAYOR");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 40, -1, 30));
 
+        pre_consumidor.setEditable(false);
         pre_consumidor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###0.###"))));
         pre_consumidor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pre_consumidor.addActionListener(new java.awt.event.ActionListener() {
@@ -376,6 +434,7 @@ windows.setLocationRelativeTo(null);
         });
         jPanel2.add(pre_consumidor, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 70, 180, 25));
 
+        pre_mayor.setEditable(false);
         pre_mayor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###0.###"))));
         pre_mayor.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pre_mayor.addActionListener(new java.awt.event.ActionListener() {
@@ -402,6 +461,7 @@ windows.setLocationRelativeTo(null);
         jLabel13.setText("TALLA");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 97, 50, 40));
 
+        id_proveedor.setEditable(false);
         id_proveedor.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         id_proveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -421,6 +481,7 @@ windows.setLocationRelativeTo(null);
         txt_fecha.setEnabled(false);
         jPanel2.add(txt_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 130, 180, 25));
 
+        pre_com.setEditable(false);
         pre_com.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###0.###"))));
         pre_com.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pre_com.addActionListener(new java.awt.event.ActionListener() {
@@ -436,7 +497,6 @@ windows.setLocationRelativeTo(null);
         jPanel2.add(pre_com, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 10, 180, 25));
 
         jButton7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\lupa.png")); // NOI18N
         jButton7.setText("PROVEEDOR");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -453,6 +513,7 @@ windows.setLocationRelativeTo(null);
         jLabel17.setText("ITBIS");
         jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 10, 40, 30));
 
+        itbis.setEditable(false);
         itbis.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         itbis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -462,7 +523,6 @@ windows.setLocationRelativeTo(null);
         jPanel2.add(itbis, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 110, 25));
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\lupa.png")); // NOI18N
         jButton3.setText("BUSCAR MARCA");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -471,6 +531,7 @@ windows.setLocationRelativeTo(null);
         });
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 180, 25));
 
+        id_marca.setEditable(false);
         id_marca.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         id_marca.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -479,6 +540,7 @@ windows.setLocationRelativeTo(null);
         });
         jPanel2.add(id_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 180, 25));
 
+        reorden.setEditable(false);
         reorden.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.NumberFormatter(new java.text.DecimalFormat("###0.###"))));
         reorden.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         reorden.addActionListener(new java.awt.event.ActionListener() {
@@ -496,6 +558,7 @@ windows.setLocationRelativeTo(null);
         });
         jPanel2.add(reorden, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 180, 25));
 
+        talla.setEditable(false);
         talla.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         talla.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -511,9 +574,9 @@ windows.setLocationRelativeTo(null);
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         guardar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        guardar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\salvar.png")); // NOI18N
         guardar.setText("Guardar");
         guardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        guardar.setEnabled(false);
         guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 guardarActionPerformed(evt);
@@ -527,9 +590,9 @@ windows.setLocationRelativeTo(null);
         jPanel3.add(guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 12, 136, 40));
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\actualizar.png")); // NOI18N
         jButton4.setText("Modificar");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton4.setEnabled(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -538,9 +601,9 @@ windows.setLocationRelativeTo(null);
         jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 12, 148, 40));
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\cruzar.png")); // NOI18N
         jButton2.setText("Eliminar");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jButton2.setEnabled(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -549,7 +612,6 @@ windows.setLocationRelativeTo(null);
         jPanel3.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(671, 12, 145, 40));
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\anadir (1).png")); // NOI18N
         jButton6.setText("Nuevo");
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -560,7 +622,6 @@ windows.setLocationRelativeTo(null);
         jPanel3.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(454, 12, 149, 40));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\salida.png")); // NOI18N
         jButton1.setText("Salir");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -573,13 +634,11 @@ windows.setLocationRelativeTo(null);
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 1030, 70));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\centro-comercial.png")); // NOI18N
         jLabel8.setText("REGISTRO DE ARTICULOS");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
 
         jButton8.setBackground(new java.awt.Color(204, 204, 204));
         jButton8.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\lupa.png")); // NOI18N
         jButton8.setText("BUSCAR ARTICULO");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1142,6 +1201,7 @@ windows.setLocationRelativeTo(null);
         buscar_articulos window = new buscar_articulos();
         window.setVisible(true);
         window.setLocationRelativeTo(null);
+        jButton4.setEnabled(true);
           
     }//GEN-LAST:event_jButton8ActionPerformed
 int validarCODIGO(){

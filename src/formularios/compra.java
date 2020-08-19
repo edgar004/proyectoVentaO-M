@@ -2,6 +2,7 @@
 package formularios;
 
 import conectar.conectar;
+import static formularios.Clientes_mantenimiento.idcliente;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,6 +13,8 @@ import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -25,7 +28,7 @@ public class compra extends javax.swing.JFrame {
     
     public compra() {
         initComponents();
-   
+        
         datos.getColumnModel().getColumn(6).setMaxWidth(0);
         datos.getColumnModel().getColumn(6).setMinWidth(0);
         datos.getTableHeader().getColumnModel().getColumn(6).setMaxWidth(0);
@@ -142,17 +145,32 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         for (int j = 0; j < datos.getRowCount(); j++) {
             codigo_art = (datos.getValueAt(j, 0).toString());
             cantidad_art = (datos.getValueAt(j, 2).toString());
-            float precio_compra = Float.parseFloat((datos.getValueAt(j, 6).toString()));
+            float precio_compra = calculo_poderado(codigo_art);
             try {
-                PreparedStatement psU = cn.prepareStatement("UPDATE articulo SET cant_art=cant_art + '"+cantidad_art+"' ,valor_inventario=valor_inventario +'"+Float.valueOf(cantidad_art)*precio_compra+"' where cod_art='" + codigo_art + "' " );
+                PreparedStatement psU = cn.prepareStatement("UPDATE articulo SET cant_art=cant_art + '"+cantidad_art+"' ,pre_compra='"+precio_compra+"' where cod_art='" + codigo_art + "' " );
                 psU.executeUpdate();
-                // JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS");
             } catch (Exception ex) {
-               // Logger.getLogger(Facturar_2.class.getName()).log(Level.SEVERE, null, ex);
+                 JOptionPane.showMessageDialog(null,ex);
             }
         }
-        //buscar_articulo.requestFocus();
     }
+      
+      float calculo_poderado(String codigo_art){
+        try {
+            String sql ="SELECT * FROM detalle_comp where codigo='" + codigo_art + "'";
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            float importe=0;
+            int cantidad=0;
+            while(rs.next()){
+                importe+=Float.parseFloat(rs.getString("importe"));
+                cantidad+=Float.parseFloat(rs.getString("cantidad"));
+                }
+            return importe/cantidad;
+        } catch (Exception ex) {
+            return 0;
+        }
+      }
  void sumar() {
          String jtotal = "";
          float cv1 = 0 , cv2 = 0;
@@ -240,7 +258,18 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
    }
    
    
-   
+   void actualizar_codigo() {
+       
+            try {
+                PreparedStatement psU = cn.prepareStatement("UPDATE contador SET idcompra=idcompra + 1  " );
+                psU.executeUpdate();
+                // JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS CON EXITO");
+            } catch (Exception ex) {
+                Logger.getLogger(Clientes_mantenimiento.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        
+        id.requestFocus();
+    }
   void Agregardato(){
       
        try {
@@ -254,9 +283,9 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
             //pts.setString(8, txtncf.getText());
               
              pts.executeUpdate();
-             
+             actualizar_codigo();
         } catch (SQLException ex) {
-        JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "");
         }
         }
     
@@ -264,7 +293,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
          DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
      modelo2.getDataVector().clear();
         String [] registros = new String [9];
-        String sql ="SELECT * FROM articulo ";
+        String sql ="SELECT * FROM articulo where estado='existe'";
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -340,7 +369,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\factura.png")); // NOI18N
         jLabel5.setText("COMPRA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 150, -1));
 
@@ -583,7 +611,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(701, 523, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jLabel9.setText("BUSCAR PRODUCTO");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 220, 220, 40));
 
@@ -625,7 +652,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.add(cant, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 260, 141, 32));
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\centro-comercial.png")); // NOI18N
         jButton6.setText("Agregar ");
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -727,9 +753,8 @@ limpiar();
  return;
  }
         Agregardato();  
- actualizar_inventario();
  AgregarDetalleFactura(); 
-  reiniciarJTable(datos);
+  actualizar_inventario();
         reiniciarJTable2(tabla_art);
         cargar();
         
