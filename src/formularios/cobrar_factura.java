@@ -287,7 +287,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)t_detalle.getModel();
         setTitle("COBRAR FACTURA");
         setBackground(new java.awt.Color(153, 153, 255));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         datos.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -342,7 +342,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)t_detalle.getModel();
             t_detalle.getColumnModel().getColumn(5).setResizable(false);
         }
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -504,7 +504,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)t_detalle.getModel();
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(4, 4, 4)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(total, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()

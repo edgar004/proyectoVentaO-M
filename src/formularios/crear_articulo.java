@@ -1202,6 +1202,7 @@ windows.setLocationRelativeTo(null);
         window.setVisible(true);
         window.setLocationRelativeTo(null);
         jButton4.setEnabled(true);
+        guardar.setEnabled(false);
           
     }//GEN-LAST:event_jButton8ActionPerformed
 int validarCODIGO(){

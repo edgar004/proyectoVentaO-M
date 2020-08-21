@@ -348,7 +348,7 @@ void PagoTotal(){
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CUENTAS POR COBRAR");
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         tblcuentacobrar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -392,7 +392,7 @@ void PagoTotal(){
         total2.setBackground(new java.awt.Color(0, 204, 255));
         total2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         fecha2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -464,7 +464,7 @@ void PagoTotal(){
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -516,7 +516,7 @@ void PagoTotal(){
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnrealizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

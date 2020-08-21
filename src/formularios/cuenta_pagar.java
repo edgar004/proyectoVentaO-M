@@ -308,7 +308,7 @@ public class cuenta_pagar extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
 
         jTabbedPane5.setBackground(new java.awt.Color(153, 204, 255));
         jTabbedPane5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -316,9 +316,9 @@ public class cuenta_pagar extends javax.swing.JFrame {
         jTabbedPane6.setBackground(new java.awt.Color(153, 204, 255));
         jTabbedPane6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel4.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(102, 102, 102));
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
@@ -365,7 +365,7 @@ public class cuenta_pagar extends javax.swing.JFrame {
             }
         });
 
-        jPanel5.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         btnrealizar.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N

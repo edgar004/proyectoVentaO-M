@@ -69,14 +69,14 @@ public class facturacion extends javax.swing.JFrame {
             
             
             
-            parametro.put("company", "PROVISIONES RAMOS AVE. 30 CABALLEROS, LOS REYES");
+            parametro.put("company", "TIENDA LA MUÑECA HATO DEL YAQUE EL TAMARINDO  ");
              parametro.put("fecha", hora);
             parametro.put("hora", fecha.getText());
            
             parametro.put("telefono3", "809-585-7590");
             parametro.put("idfactura", txtcomp.getText());
              parametro.put("cliente", cliente.getText());
-            parametro.put("direccion", "LOS REYES C/ 10, SANTIAGO R.D");
+            parametro.put("direccion", "EL TAMARINDO C/ 10, SANTIAGO R.D");
            
             parametro.put("tipo", "CREDITO");
              parametro.put("total", sub_total.getText());
@@ -91,7 +91,6 @@ public class facturacion extends javax.swing.JFrame {
 
         } catch (Exception ex) {
             ex.printStackTrace();
-            JOptionPane.showMessageDialog(null, "ERROR\n" + ex.getMessage());
         }
 
     }
@@ -129,7 +128,6 @@ public class facturacion extends javax.swing.JFrame {
                 codven= (String.valueOf(rs.getString("id_venta")));
                 
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex);
         }
         
             
@@ -157,7 +155,6 @@ public class facturacion extends javax.swing.JFrame {
                     // JOptionPane.showMessageDialog(null, "DATOS REGISTRADOS CON EXITO");
                 }
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, ex);
                JOptionPane.showMessageDialog(null, "error en detalle temporal");
             }
         }
@@ -169,7 +166,6 @@ public class facturacion extends javax.swing.JFrame {
                 psU.executeUpdate();
                 // JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS CON EXITO");
             } catch (Exception ex) {
-                Logger.getLogger(facturacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         
         buscar_articulo.requestFocus();
@@ -184,7 +180,6 @@ public class facturacion extends javax.swing.JFrame {
                 psU.executeUpdate();
                 // JOptionPane.showMessageDialog(null, "DATOS MODIFICADOS CON EXITO");
             } catch (Exception ex) {
-                Logger.getLogger(facturacion.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
         buscar_articulo.requestFocus();
@@ -1245,11 +1240,13 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
                         actualizar_factura();
                          imprimir01();
                         this.dispose();
-                        facturacion windows = new facturacion();
+                       try {
+                            facturacion windows = new facturacion();
                         windows.setVisible(true);
                         windows.setLocationRelativeTo(null);
+                       }catch(Exception ex){
                        
-            
+                         }
                     }
          else{
 

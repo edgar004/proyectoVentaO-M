@@ -145,7 +145,7 @@ public class ganancias extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("GANANCIAS");
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setToolTipText("");
 
@@ -169,7 +169,7 @@ public class ganancias extends javax.swing.JFrame {
         txttotal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         txttotal.setForeground(new java.awt.Color(255, 0, 0));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
@@ -192,7 +192,7 @@ public class ganancias extends javax.swing.JFrame {
                 .addGap(0, 0, 0))
         );
 
-        jRadioButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButton1.setBackground(new java.awt.Color(204, 204, 204));
         buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jRadioButton1.setText("A Credito");
@@ -202,7 +202,7 @@ public class ganancias extends javax.swing.JFrame {
             }
         });
 
-        jRadioButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButton2.setBackground(new java.awt.Color(204, 204, 204));
         buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jRadioButton2.setText("Contado");

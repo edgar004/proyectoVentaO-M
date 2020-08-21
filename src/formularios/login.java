@@ -33,7 +33,6 @@ import javax.swing.JOptionPane;
             if (rs.next()){
                 registros[1] = rs.getString("idempleado");
                 
-                
                     Statement stmtEmpleado=cn.createStatement();
                  ResultSet rsEmpleado=stmtEmpleado.executeQuery("SELECT estado, nombre, apellido FROM empleado WHERE (idempleado='"+rs.getString("idempleado")+"')");
                   
