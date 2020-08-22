@@ -21,8 +21,6 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         this.setExtendedState(this.MAXIMIZED_BOTH);
         sacar_texto();
-          jMenuItem12.setVisible(false);
-        jMenuItem5.setVisible(false);
 
     }
 
@@ -292,7 +290,6 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuItem5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/sumar.png"))); // NOI18N
         jMenuItem5.setText("CUADRES");
-        jMenuItem5.setEnabled(false);
         jMenuItem5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jMenuItem5MouseClicked(evt);

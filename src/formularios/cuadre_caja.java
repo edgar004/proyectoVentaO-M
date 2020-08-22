@@ -489,7 +489,7 @@ public class cuadre_caja extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 204, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        jPanel2.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -528,7 +528,7 @@ public class cuadre_caja extends javax.swing.JFrame {
         txtventatotal.setEditable(false);
         txtventatotal.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
 
-        jPanel3.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -545,6 +545,7 @@ public class cuadre_caja extends javax.swing.JFrame {
         btnguardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/guardar.png"))); // NOI18N
         btnguardar.setText("GUARDAR");
         btnguardar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnguardar.setEnabled(false);
         btnguardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnguardarActionPerformed(evt);
@@ -726,7 +727,7 @@ public class cuadre_caja extends javax.swing.JFrame {
                         .addComponent(diferencia2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
 
-        jPanel4.setBackground(new java.awt.Color(102, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(153, 153, 153));
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         tblfacturaimp2.setModel(new javax.swing.table.DefaultTableModel(
@@ -859,10 +860,21 @@ public class cuadre_caja extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-  if(total_caja.getText().equals("")){
+
+      
+        
+        if(total_caja.getText().equals("")){
         JOptionPane.showMessageDialog(null, "DIGITE EL MONTO EN CAJA ");
         total_caja.requestFocus();
         }else{
+            
+              if(Double.parseDouble(total_caja.getText())<0){
+            JOptionPane.showMessageDialog(null, "El total de caja no puede ser menor que cero");
+            total_caja.setText("");
+            total_caja.requestFocus();
+            return;
+        }
+              
         cuadrar();
         btnguardar.setEnabled(true);
         }         
@@ -901,8 +913,12 @@ public class cuadre_caja extends javax.swing.JFrame {
     }//GEN-LAST:event_btnguardarActionPerformed
 
     private void total_cajaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_total_cajaKeyTyped
-  char c = evt.getKeyChar();
-        if (c<'0'  || c >'9') evt.consume();         // TODO add your handling code here:
+  char caracter = evt.getKeyChar();
+       if (((caracter < '0') || (caracter > '9')) 
+        && (caracter != evt.VK_BACK_SPACE)
+        && (caracter != '.' || total_caja.getText().contains(".")) ) {
+            evt.consume();
+       }// TODO add your handling code here:
     }//GEN-LAST:event_total_cajaKeyTyped
 
     private void total_cajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_total_cajaActionPerformed

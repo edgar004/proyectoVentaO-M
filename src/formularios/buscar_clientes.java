@@ -327,6 +327,8 @@ public class buscar_clientes extends javax.swing.JFrame {
                    Clientes_mantenimiento.mayor.setSelected(true);
                }
               }
+             
+             this.dispose();
         }
                       
        

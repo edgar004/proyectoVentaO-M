@@ -247,10 +247,13 @@ public class buscar_articulos extends javax.swing.JFrame {
 
                 Date fecha = new Date(tabla_art.getValueAt(fila, 14).toString().split("/")[1]+"/"+tabla_art.getValueAt(fila, 14).toString().split("/")[2]+"/"+tabla_art.getValueAt(fila, 14).toString().split("/")[0]);
                 crear_articulo.txt_fecha.setDate(fecha);
-            }
-            crear_articulo.id = crear_articulo.id_art.getText();
+                
+                 crear_articulo.id = crear_articulo.id_art.getText();
             crear_articulo.des_art.requestFocus();
             crear_articulo.cant.setEnabled(false);
+                 this.dispose();
+            }
+           
 
     }//GEN-LAST:event_tabla_artMouseClicked
 

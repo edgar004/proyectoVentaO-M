@@ -142,6 +142,12 @@ public class cuenta_pagar extends javax.swing.JFrame {
         if(abonar.getText().equals("")){
         JOptionPane.showMessageDialog(null, "FAVOR DIGITE CANTIDAD A ABONAR","ATENCION", JOptionPane.INFORMATION_MESSAGE);
         }else{
+           if(Double.parseDouble(abonar.getText())<0){
+               JOptionPane.showMessageDialog(null, "LA CANTIADAD ABONADA TIENE QUE SER MAYOR QUE 0","ATENCION", JOptionPane.INFORMATION_MESSAGE);
+                return;
+               } 
+            
+            
             try {
     float balance1 = 0;
     float abono1 = 0;
@@ -849,8 +855,12 @@ public class cuenta_pagar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void abonarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_abonarKeyTyped
-     char c = evt.getKeyChar();
-if (c<'0'  || c >'9') evt.consume();          // TODO add your handling code here:
+     char caracter = evt.getKeyChar();
+       if (((caracter < '0') || (caracter > '9')) 
+        && (caracter != evt.VK_BACK_SPACE)
+        && (caracter != '.' || abonar.getText().contains(".")) ) {
+            evt.consume();
+       }// TODO add your handling code here:
     }//GEN-LAST:event_abonarKeyTyped
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

@@ -261,6 +261,7 @@ public class buscarUsuarios extends javax.swing.JFrame {
             Registro_usuarios.usuario.setText(tabla_usu.getValueAt(fila, 3).toString());
             Registro_usuarios.jComboBox1.setSelectedItem(tabla_usu.getValueAt(fila, 4).toString());
             carga_tabla_permiso_roles_usu(Integer.parseInt(tabla_usu.getValueAt(fila, 0).toString()));
+             this.dispose();
         }
 
     }//GEN-LAST:event_tabla_usuMouseClicked

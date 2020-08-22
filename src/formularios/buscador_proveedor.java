@@ -187,7 +187,7 @@ public String modulo="proveedor";
              proveedor.txt_fecha.setDate(fecha); 
             }
           
-
+            this.dispose();
         }
       
     }//GEN-LAST:event_tabla_proveedorMouseClicked

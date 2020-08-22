@@ -618,7 +618,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         }
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jLabel9.setText("BUSCAR PRODUCTO");
 
         buscar_articulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -660,7 +659,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\vender.png")); // NOI18N
         jLabel12.setText("PRODUCTO");
 
         des_art.setEditable(false);
@@ -669,7 +667,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         des_art.setCaretColor(new java.awt.Color(0, 0, 153));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\centro-comercial.png")); // NOI18N
         jButton1.setText("Agregar Producto");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -688,7 +685,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\comprar.png")); // NOI18N
         jLabel5.setText("FACTURA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 13, -1, -1));
 
@@ -762,7 +758,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton2.setText("BUSCAR CLIENTE");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -866,8 +861,6 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel2.add(mayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(179, 252, -1, -1));
         jPanel2.add(txtcomp2, new org.netbeans.lib.awtextra.AbsoluteConstraints(361, 252, 0, 0));
         jPanel2.add(codigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 269, 0, 0));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\equipo (3).png")); // NOI18N
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 30, 40));
 
         tabla_art.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -1311,6 +1304,18 @@ validacion();
     cant.requestFocus();
     return;
      //ConfirmarAgregado();
+  }
+  
+  if(Double.parseDouble(precio.getText())<0){
+      JOptionPane.showMessageDialog(null, "EL PRECIO NO PUEDE SER MENOR QUE CERO");
+    precio.requestFocus();
+    return; 
+  }
+  
+    if(Double.parseDouble(cant.getText())<0){
+      JOptionPane.showMessageDialog(null, "LA CANTIDAD NO PUEDE SER MENOR QUE CERO");
+    cant.requestFocus();
+    return; 
   }
   
   

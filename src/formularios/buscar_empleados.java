@@ -235,7 +235,7 @@ void cargar(){
             empleado_1.jButton4.setEnabled(true);
             }
              
-
+             this.dispose();
         }
 
          
