@@ -164,29 +164,30 @@ public class buscar_clientes extends javax.swing.JFrame {
         tabla_cli = new javax.swing.JTable();
         buscar_cliente = new javax.swing.JTextField();
         contador_txt = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("CONSULTA DE CLIENTES");
-        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jLabel1.setText("Buscar ");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 100, 30));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\equipo (3).png")); // NOI18N
         jLabel3.setText("Clientes Registrados");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, 260, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, 260, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Registro");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1260, 70, -1, 30));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1290, 70, -1, 30));
 
         tabla_cli.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tabla_cli.setModel(new javax.swing.table.DefaultTableModel(
@@ -242,7 +243,7 @@ public class buscar_clientes extends javax.swing.JFrame {
             tabla_cli.getColumnModel().getColumn(13).setMaxWidth(100);
         }
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1460, 250));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 1450, 250));
 
         buscar_cliente.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         buscar_cliente.addActionListener(new java.awt.event.ActionListener() {
@@ -255,28 +256,19 @@ public class buscar_clientes extends javax.swing.JFrame {
                 buscar_clienteKeyReleased(evt);
             }
         });
-        jPanel1.add(buscar_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 1120, 30));
+        jPanel1.add(buscar_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 1190, 30));
 
         contador_txt.setEditable(false);
         contador_txt.setBackground(new java.awt.Color(0, 0, 0));
         contador_txt.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         contador_txt.setForeground(new java.awt.Color(255, 0, 0));
-        jPanel1.add(contador_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1320, 70, 100, 30));
-
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1330, 0, 40, 30));
+        jPanel1.add(contador_txt, new org.netbeans.lib.awtextra.AbsoluteConstraints(1350, 70, 100, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1459, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,10 +336,6 @@ public class buscar_clientes extends javax.swing.JFrame {
         filtrar(buscar_cliente.getText());
     }//GEN-LAST:event_buscar_clienteKeyReleased
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
- this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -392,7 +380,6 @@ public class buscar_clientes extends javax.swing.JFrame {
     private javax.swing.JTextField buscar_cliente;
     private javax.swing.JTextField contador_txt;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

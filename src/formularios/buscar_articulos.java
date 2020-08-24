@@ -79,20 +79,19 @@ public class buscar_articulos extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         buscar_articulo = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
         contador = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tabla_art = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 16)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Downloads\\lupa.png")); // NOI18N
         jLabel1.setText("BUSCAR");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, -1, 30));
 
@@ -109,17 +108,6 @@ public class buscar_articulos extends javax.swing.JFrame {
         });
         jPanel2.add(buscar_articulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 737, 30));
 
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/salida.png"))); // NOI18N
-        jButton1.setText("Salir");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(955, 0, 105, 43));
-
         contador.setBackground(new java.awt.Color(0, 0, 0));
         contador.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         contador.setForeground(new java.awt.Color(255, 0, 0));
@@ -128,11 +116,11 @@ public class buscar_articulos extends javax.swing.JFrame {
                 contadorActionPerformed(evt);
             }
         });
-        jPanel2.add(contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 70, 100, 30));
+        jPanel2.add(contador, new org.netbeans.lib.awtextra.AbsoluteConstraints(940, 70, 100, 30));
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel16.setText("REGISTRO");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 70, 80, 33));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 70, 80, 33));
 
         tabla_art.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
         tabla_art.setModel(new javax.swing.table.DefaultTableModel(
@@ -162,10 +150,10 @@ public class buscar_articulos extends javax.swing.JFrame {
             tabla_art.getColumnModel().getColumn(14).setMaxWidth(100);
         }
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 101, 1060, 268));
+        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 101, 1040, 268));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Downloads\\centro-comercial.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\centro-comercial.png")); // NOI18N
         jLabel3.setText("Articulos  Registrados");
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, 260, -1));
 
@@ -173,11 +161,11 @@ public class buscar_articulos extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1050, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 380, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -257,10 +245,6 @@ public class buscar_articulos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_tabla_artMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void contadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_contadorActionPerformed
@@ -304,7 +288,6 @@ conectar con = new conectar();
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField buscar_articulo;
     private javax.swing.JTextField contador;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel3;

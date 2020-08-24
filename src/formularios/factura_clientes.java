@@ -91,6 +91,14 @@ public class factura_clientes extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, "FAVOR DIGITE CANTIDAD A ABONAR","ATENCION", JOptionPane.INFORMATION_MESSAGE);
         }else{
             try {
+                
+                
+                 if(Double.parseDouble(abonar.getText())<0){
+               JOptionPane.showMessageDialog(null, "LA CANTIADAD ABONADA TIENE QUE SER MAYOR QUE 0","ATENCION", JOptionPane.INFORMATION_MESSAGE);
+                return;
+               } 
+                 
+                 
     float balance1 = 0;
     float abono1 = 0;
     float estado1 = 0;
@@ -702,6 +710,7 @@ void PagoTotal(){
         jTabbedPane1.addTab("PAGOS REALIZADOS", jTabbedPane3);
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\credito.png")); // NOI18N
         jLabel12.setText("CUENTAS POR COBRAR");
 
         monto.setBackground(new java.awt.Color(0, 0, 0));

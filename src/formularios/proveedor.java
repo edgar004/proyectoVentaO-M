@@ -1,9 +1,9 @@
 
 package formularios;
 
+
 import conectar.conectar;
-import static formularios.Clientes_mantenimiento.txt_fecha;
-import static formularios.empleado_1.jButton1;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -13,7 +13,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
+
 
 
 public class proveedor extends javax.swing.JFrame {
@@ -22,11 +22,11 @@ public class proveedor extends javax.swing.JFrame {
     public proveedor() {
         initComponents();
         numero_serie();
-        
         Date fechaActual = new Date();
         txt_fecha.setDate(fechaActual);
         representante.requestFocus();
         this.setLocationRelativeTo(null);
+       
     }
     
     void consulta() {
@@ -354,9 +354,9 @@ txt_fecha.setDate(null);
         jButton6 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("REGISTRO DE PROVEEDORES");
-        setUndecorated(true);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -365,7 +365,7 @@ txt_fecha.setDate(null);
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\proyecto\\Proyecto duany\\src\\iconos\\profesor.png")); // NOI18N
         jLabel1.setText("REGISTRO DE PROVEEDOR");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -539,7 +539,7 @@ txt_fecha.setDate(null);
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel12.setText("CALLE");
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 50, 30));
+        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 50, 30));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel13.setText("CIUDAD");
@@ -561,7 +561,7 @@ txt_fecha.setDate(null);
                 calleActionPerformed(evt);
             }
         });
-        jPanel2.add(calle, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 210, 25));
+        jPanel2.add(calle, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 200, 25));
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
         jLabel14.setText("CELULAR");
@@ -597,7 +597,7 @@ txt_fecha.setDate(null);
         });
         jPanel2.add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 40, 25));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 690, 170));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 640, 180));
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
@@ -614,11 +614,11 @@ txt_fecha.setDate(null);
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 812, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 812, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 326, Short.MAX_VALUE)
         );
 
         pack();
@@ -959,4 +959,5 @@ int validarRNC(){
 String id = "";
       conectar con = new conectar();
       Connection cn = con.connection();
+       
 }

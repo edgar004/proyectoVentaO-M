@@ -13,6 +13,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -50,6 +51,7 @@ public class cobrar_factura extends javax.swing.JFrame {
           fecha = (formato.format(sistema_fecha));
         efectivo.requestFocus();
         this.setLocationRelativeTo(null);
+        cargar_factura();
     }
      class horas implements ActionListener {
 
@@ -420,7 +422,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)t_detalle.getModel();
         });
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconos/forceexit_103817.png"))); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\cruzar.png")); // NOI18N
         jButton1.setText("CANCELAR");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -527,7 +529,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)t_detalle.getModel();
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(procesar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -681,6 +683,11 @@ JOptionPane.showMessageDialog(null, "DEBE EFECTUAR UN MONTO");
 efectivo.requestFocus();
 return;
 }
+             if(Double.parseDouble(efectivo.getText())<0){
+               JOptionPane.showMessageDialog(null, "LA CANTIADAD EN EFECTIVO TIENE QUE SER MAYOR QUE 0","ATENCION", JOptionPane.INFORMATION_MESSAGE);
+                return;
+               } 
+    
          float a = Float.parseFloat(total.getText());
 float b = Float.parseFloat(efectivo.getText());
 float resta = 0;
@@ -694,8 +701,14 @@ if (b<a){
     }
             
 resta = b-a;
-recibido.setText(efectivo.getText());
-cambio.setText(String.valueOf(resta));
+
+ DecimalFormat df = new DecimalFormat("#.00");
+ double result = new Double(df.format(Double.parseDouble(efectivo.getText())));
+recibido.setText( result+"");
+
+
+result = new Double(df.format(Double.parseDouble(String.valueOf(resta))));
+cambio.setText(String.valueOf(result));
 procesar.requestFocus();
  }
     }//GEN-LAST:event_jButton2ActionPerformed

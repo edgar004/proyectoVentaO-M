@@ -15,8 +15,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.text.MaskFormatter;
+
 
 
 public class Clientes_mantenimiento extends javax.swing.JFrame {
@@ -380,7 +379,7 @@ void guardar_residencial(){
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("REGISTRO DE CLIENTES");
-        setUndecorated(true);
+        setResizable(false);
 
         jPanel2.setBackground(new java.awt.Color(153, 153, 153));
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -606,6 +605,7 @@ void guardar_residencial(){
         jPanel1.add(cedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 180, 25));
 
         valida_cedula.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        valida_cedula.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         valida_cedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 valida_cedulaActionPerformed(evt);
@@ -627,6 +627,7 @@ void guardar_residencial(){
         jPanel1.add(rnc, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 180, 25));
 
         jToggleButton1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jToggleButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jToggleButton1ActionPerformed(evt);
@@ -654,12 +655,13 @@ void guardar_residencial(){
         });
         jPanel1.add(mayor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, -1, -1));
 
-        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 620, 260));
+        jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 610, 260));
 
         jPanel3.setBackground(new java.awt.Color(153, 153, 153));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         guardar_boton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        guardar_boton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\salvar.png")); // NOI18N
         guardar_boton.setText("Guardar");
         guardar_boton.setToolTipText("Guardar");
         guardar_boton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -671,6 +673,7 @@ void guardar_residencial(){
         });
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\anadir (1).png")); // NOI18N
         jButton6.setText("Nuevo");
         jButton6.setToolTipText("Nuevo");
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -681,6 +684,7 @@ void guardar_residencial(){
         });
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\salida.png")); // NOI18N
         jButton3.setText("Salir");
         jButton3.setToolTipText("Salir");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -691,6 +695,7 @@ void guardar_residencial(){
         });
 
         boton_modificar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        boton_modificar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\modifi.png")); // NOI18N
         boton_modificar.setText("Modificar");
         boton_modificar.setToolTipText("Modificar");
         boton_modificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -732,11 +737,13 @@ void guardar_residencial(){
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 620, 60));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\cliente.png")); // NOI18N
         jLabel10.setText("REGISTRO DE CLIENTE");
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 10, -1, 20));
+        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 0, -1, 30));
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton2.setText("BUSCAR CLIENTE");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -744,13 +751,15 @@ void guardar_residencial(){
             }
         });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 310, 240, 60));
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, 250, 220));
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\mujer (1).png")); // NOI18N
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 40, 260, 240));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 893, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -957,10 +966,6 @@ void guardar_residencial(){
                 + ",apellido='"+apellido.getText()+"',precio_por_mayor="+mayor.isSelected()+",rnc ='"+rnc.getText()+"',"
                 + " sector = '"+sector.getText()+"',calle='"+calle.getText()+"',ciudad='"+ciudad.getText()+"',estado='"+estado.getSelectedItem()+"',limite_credito='"+limite_credito.getText()+"',cedula='"+cedula.getText()+"',razon_social='"+razon_social.getText()+"' where idcliente='"+idcliente.getText()+"'");
             
-            
-            JOptionPane.showMessageDialog(null, "UPDATE cliente SET idcliente='"+idcliente.getText()+"',fecha_cliente='"+fecha01+"', nombre='"+nombre.getText()+"'"
-                + ",apellido='"+apellido.getText()+"',precio_por_mayor="+mayor.isSelected()+",rnc ='"+rnc.getText()+"',"
-                + " sector = '"+sector.getText()+"',calle='"+calle.getText()+"',ciudad='"+ciudad.getText()+"',estado='"+estado.getSelectedItem()+"',limite_credito='"+limite_credito.getText()+"',cedula='"+cedula.getText()+"',razon_social='"+razon_social.getText()+"' where idcliente='"+idcliente.getText()+"'");
 
             psU.executeUpdate();
         } catch (Exception ex) {

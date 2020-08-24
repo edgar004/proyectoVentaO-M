@@ -255,7 +255,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
       
 
         String[] registros = new String[6];
-        String sql = "SELECT cod_art,desc_art,cant_art,pre_venta,itbis FROM articulo  where estado='existe' and  CONCAT (cod_art,'',desc_art)LIKE '%"+valor+"%'";
+        String sql = "SELECT cod_art,desc_art,cant_art,pre_venta,itbis FROM articulo  where estado='existe' and cant_art >0 and  CONCAT (cod_art,'',desc_art)LIKE '%"+valor+"%'";
         try {
             Statement st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -618,6 +618,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         }
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jLabel9.setText("BUSCAR PRODUCTO");
 
         buscar_articulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -659,6 +660,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\productos.png")); // NOI18N
         jLabel12.setText("PRODUCTO");
 
         des_art.setEditable(false);
@@ -667,6 +669,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         des_art.setCaretColor(new java.awt.Color(0, 0, 153));
 
         jButton1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\centro-comercial.png")); // NOI18N
         jButton1.setText("Agregar Producto");
         jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -685,6 +688,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jLabel5.setBackground(new java.awt.Color(0, 0, 0));
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\factura.png")); // NOI18N
         jLabel5.setText("FACTURA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(229, 13, -1, -1));
 
@@ -758,6 +762,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
 
         jButton2.setBackground(new java.awt.Color(204, 204, 204));
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton2.setText("BUSCAR CLIENTE");
         jButton2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -915,6 +920,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\cruzar.png")); // NOI18N
         jButton4.setText("Cancelar");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -934,6 +940,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\anadir (1).png")); // NOI18N
         jButton5.setText("Nuevo");
         jButton5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -943,6 +950,7 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
         });
 
         jButton7.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\salida.png")); // NOI18N
         jButton7.setText("Salir");
         jButton7.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
