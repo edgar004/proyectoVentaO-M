@@ -2,10 +2,17 @@
 package formularios;
 
 
-public class temporal {
+
+public class temporal { 
     public static String codigo = "";
      public static String nombre = "";
-    
+     public static   privilegios[] privilegiosUser = new privilegios[50];
+     
+    public   temporal(){
+        for(int i=0;i<50;i++){
+            privilegiosUser[i]=new privilegios();
+        }
+    }
     
     public static String getTexto ()
     {

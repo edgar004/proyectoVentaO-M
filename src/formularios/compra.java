@@ -132,9 +132,13 @@ DefaultTableModel modelo2 = (DefaultTableModel)tabla_art.getModel();
  des_art.setText("");
  precio3.setText("");
  cant.setText("");
- jButton2.setEnabled(true);
+ 
+ if(temporal.privilegiosUser[7].crear==1){
+      jButton2.setEnabled(true);
  jButton3.setEnabled(true);
  
+ }
+
  
  
  

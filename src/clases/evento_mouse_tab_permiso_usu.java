@@ -7,6 +7,8 @@ package clases;
 
 import formularios.Registro_usuarios;
 import formularios.buscarUsuarios;
+import formularios.privilegios;
+import formularios.temporal;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -27,7 +29,6 @@ public class evento_mouse_tab_permiso_usu extends MouseAdapter {
 
     public void actualiza_roles_usu() {
         if (!(buscarUsuarios.tabla_usu.getSelectedRow() == -1) && Registro_usuarios.jtable_permiso.isEnabled() == true) {
-
             int id_permiso_usu = 0, id_usuario = 0, fila = 0,fila_tabla_usuario=0;
             String permiso_usu = "";
             boolean acceso = false, crear = false, modificar = false, borrar = false, anular = false, imprimir = false, exportar = false;
@@ -56,7 +57,6 @@ public class evento_mouse_tab_permiso_usu extends MouseAdapter {
     public void mouseClicked(MouseEvent e) {
         if(Registro_usuarios.boton_modificar.isEnabled()==false) return;
         actualiza_roles_usu();
-        JOptionPane.showMessageDialog(null, "Actualizado");
     }
     private clases.crud_usuario crud_usuario;
     private ResultSet rs;

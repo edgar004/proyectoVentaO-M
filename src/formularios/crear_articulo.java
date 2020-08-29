@@ -183,8 +183,9 @@ windows.setLocationRelativeTo(null);
         txt_fecha.setDate(fechaActual);
         id_art.requestFocus();
            jButton1.setEnabled(true);
-    jButton3.setEnabled(false);
-   activar_campos();
+          //jButton3.setEnabled(false);
+    
+    if(temporal.privilegiosUser[6].crear==1)activar_campos();
     }
      
      
@@ -680,8 +681,12 @@ windows.setLocationRelativeTo(null);
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         limpiar02();
-        guardar.setEnabled(true);
-        cant.setEnabled(true);
+            if(temporal.privilegiosUser[6].crear==1){
+                  guardar.setEnabled(true);
+                 cant.setEnabled(true);
+            }
+
+      
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

@@ -39,7 +39,6 @@ public class carga_tab_permisos_usuarios extends WindowAdapter {
     }
 
     public boolean carga_tab_permiso_usuario() {
-
         String[] Columnas = {"Aplicaciones/Modulos", "Acceso", "Crear", "Modificar", "Borrar"};
         dtm.setColumnIdentifiers(Columnas);
         jframe_usuario.jtable_permiso.setModel(dtm);
@@ -102,7 +101,6 @@ public class carga_tab_permisos_usuarios extends WindowAdapter {
     
     
     public boolean limpiar_permiso() {
-
         String[] Columnas = {"Aplicaciones/Modulos", "Acceso", "Crear", "Modificar", "Borrar"};
         dtm.setColumnIdentifiers(Columnas);
         jframe_usuario.jtable_permiso.setModel(dtm);

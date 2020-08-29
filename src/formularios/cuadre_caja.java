@@ -10,7 +10,9 @@ import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashMap;
 import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
@@ -33,9 +35,8 @@ public class cuadre_caja extends javax.swing.JFrame {
     
     public cuadre_caja() {
         initComponents();
-       // BuscarFactura2("");
-       // BuscarFactura("");
-        //SumarProducto2();
+        
+   
          MostrarVenta2();
         SumarProducto();
          SumarProducto2();
@@ -75,18 +76,32 @@ public class cuadre_caja extends javax.swing.JFrame {
         
           
         try {
-            jr = (JasperReport) JRLoader.loadObjectFromFile("Reporte_cuadre2.jasper");
+            jr = (JasperReport) JRLoader.loadObject(getClass().getResource("/reportes/Reporte_cuadre2.jasper"));
            // JOptionPane.showMessageDialog(null, "EL CODIGO ES " + sub_total01+sub_total02+sub_total03);
             HashMap parametro = new HashMap();
             //  parametro.put("company", "INVERSIONES SABATIAN");
                   //parametro.put("servicios",total.getText()); 
+                  
+                      Calendar c= new GregorianCalendar();
+       String dia = Integer.toString(c.get(Calendar.DATE));
+        String mes = Integer.toString(c.get(Calendar.MONTH));
+        String annio = Integer.toString(c.get(Calendar.YEAR));
+                
+                
+       // BuscarFactura2("");
+       // BuscarFactura("");
+        //SumarProducto2();
+       String fechaActual = Integer.valueOf(mes)+1+"/"+(dia)+"/"+(annio);
+        
                 parametro.put("facturas",txttotal3.getText());
                 parametro.put("credito_cobrado",monto.getText());
                 parametro.put("total_ventas",txtventatotal.getText());
                  parametro.put("monto_caja",total_caja.getText());
                     parametro.put("diferencia",diferencia.getText());
-                               parametro.put("fecha",lblfecha3.getText());
-                               // parametro.put("fecha_soli",fecha_entrega.toString());
+                               parametro.put("fecha",fechaActual);
+                               parametro.put("usuario",temporal.getNombre());
+                               
+                               //parametro.put("fecha",formatoFecha);
           JasperPrint jp = JasperFillManager.fillReport(jr, parametro,new JRBeanCollectionDataSource(lista));
                 JasperViewer jv = new JasperViewer(jp,false);
                 jv.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -861,7 +876,10 @@ public class cuadre_caja extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+          if(tblfacturaimp.getRowCount()==0 && tblfacturaimp2.getRowCount()==0){
+            JOptionPane.showMessageDialog(null, "Hoy no se ha realizado factura para poder realizar el cuadre de caja");
+             return;
+          }
       
         
         if(total_caja.getText().equals("")){

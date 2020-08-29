@@ -47,64 +47,89 @@ import javax.swing.JOptionPane;
                  
                 Statement stmtRoles=cn.createStatement();
 
-                 ResultSet rsRoles=stmtRoles.executeQuery("SELECT acceso,permisos_usuarios.aplicaciones_modulos FROM roles_usuario inner join permisos_usuarios on permisos_usuarios.id_permiso_usuario =roles_usuario.id_permiso_usuario  WHERE (id_usuario='"+rs.getString("idempleado")+"')");
+                 ResultSet rsRoles=stmtRoles.executeQuery("SELECT acceso,crear,modificar,borrar,permisos_usuarios.aplicaciones_modulos FROM roles_usuario inner join permisos_usuarios on permisos_usuarios.id_permiso_usuario =roles_usuario.id_permiso_usuario  WHERE (id_usuario='"+rs.getString("idempleado")+"')");
                      
                  
                  
                    Menu menu=new Menu();
-
+                     temporal global = new temporal();
+                     
                     try{
+                        int contador=0;
                         while(rsRoles.next()){
+                            temporal.privilegiosUser[contador].crear=rsRoles.getInt("crear");
+                            temporal.privilegiosUser[contador].modificar=rsRoles.getInt("modificar");
+                            temporal.privilegiosUser[contador].borrar=rsRoles.getInt("borrar");
+
                             switch (rsRoles.getString("aplicaciones_modulos")) {
                                 case "Clientes":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuCliente.setVisible(false);
+                                        menu.menuCliente.setEnabled(false);
                                     }   break;
                                 case "Empleados":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuEmpleado.setVisible(false);
+                                        menu.menuEmpleado.setEnabled(false);
                                     }   break;
                                 case "Proveedor":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuProveedor.setVisible(false);
+                                        menu.menuProveedor.setEnabled(false);
                                     }   break;
                                 case "Usuarios":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuUsuario.setVisible(false);
+                                        menu.menuUsuario.setEnabled(false);
                                     }   break;
                                 case "Articulos":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuArticulo.setVisible(false);
+                                        menu.menuArticulo.setEnabled(false);
                                     }   break;
                                 case "Factura":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuFactura.setVisible(false);
+                                        menu.menuFactura.setEnabled(false);
                                     }   break;
                                      case "Consulta venta":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuConsultaVenta.setVisible(false);
+                                        menu.menuConsultaVenta.setEnabled(false);
                                     } 
                                      break;
                                      case "Consulta compra":
                                     if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuConsultaCompras.setVisible(false);
+                                        menu.menuConsultaCompras.setEnabled(false);
                                     }
                                      break;
                                      case "Compra":
                                       if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuCompra.setVisible(false);
+                                        menu.menuCompra.setEnabled(false);
                                     }
                                      break;
                                       case "Inventario":
                                       if(rsRoles.getString("acceso").equals("0")){
-                                        menu.menuInventario.setVisible(false);
+                                        menu.menuInventario.setEnabled(false);
                                     }
                                      break;
-                                     
+                                      case "Cuadre caja":
+                                      if(rsRoles.getString("acceso").equals("0")){
+                                        menu.jMenuItem12.setEnabled(false);
+                                    }
+                                     break;
+                                      case "Cuenta Cobrar":
+                                      if(rsRoles.getString("acceso").equals("0")){
+                                        menu.jMenuItem13.setEnabled(false);
+                                    }
+                                     break;
+                                       case "Cuanta Pagar":
+                                      if(rsRoles.getString("acceso").equals("0")){
+                                        menu.jMenuItem15.setEnabled(false);
+                                    }
+                                     break;
+                                       case "Cuenta Cuadre":
+                                      if(rsRoles.getString("acceso").equals("0")){
+                                        menu.jMenuItem5.setEnabled(false);
+                                    }
+                                     break;
                                 default:
                                     break;
                             }
-                            
+                            contador++;
                         }
                     }catch(Exception e){
                        JOptionPane.showMessageDialog(null, e.toString());
@@ -114,7 +139,7 @@ import javax.swing.JOptionPane;
                   name.setText("");
                 password.setText("");
                 name.requestFocus();
-                            temporal global = new temporal();
+                           
                     global.setTexto(idusuario.trim());
                      global.setNombre(rsEmpleado.getString("nombre")+" " + rsEmpleado.getString("apellido"));// el trim para eliminar los espacios en blanco sobrantes
                      menu.usuario_logeando.setText("Online: " + rsEmpleado.getString("nombre")+" " + rsEmpleado.getString("apellido"));

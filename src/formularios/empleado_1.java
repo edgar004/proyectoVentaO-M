@@ -896,7 +896,7 @@ public class empleado_1 extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         limpiar();
-        jButton1.setEnabled(true);
+        if(temporal.privilegiosUser[3].crear==1) jButton1.setEnabled(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -979,9 +979,12 @@ public class empleado_1 extends javax.swing.JFrame {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         buscar_empleados window = new buscar_empleados();
         window.setVisible(true);
-        window.setLocationRelativeTo(null);
-        jButton4.setEnabled(true);
+         if(temporal.privilegiosUser[3].modificar==1){
+             jButton4.setEnabled(true);
+         }
         jButton1.setEnabled(false);
+                window.setLocationRelativeTo(null);
+
     }//GEN-LAST:event_jButton7ActionPerformed
 
     /**

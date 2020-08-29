@@ -86,7 +86,6 @@ public class Menu extends javax.swing.JFrame {
 
         pn_base.setBackground(new java.awt.Color(0, 0, 0));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\Menu.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
 
         usuario_logeando.setBackground(new java.awt.Color(255, 255, 255));
@@ -105,8 +104,8 @@ public class Menu extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 1420, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(pn_baseLayout.createSequentialGroup()
                         .addGap(1083, 1083, 1083)
-                        .addComponent(usuario_logeando, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                        .addComponent(usuario_logeando, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         pn_baseLayout.setVerticalGroup(
             pn_baseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +120,6 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jMenuBar1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
 
-        jMenu1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\registro.png")); // NOI18N
         jMenu1.setText("REGISTROS");
         jMenu1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jMenu1.addActionListener(new java.awt.event.ActionListener() {
@@ -169,7 +167,6 @@ public class Menu extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jMenu6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\mantenimiento1.png")); // NOI18N
         jMenu6.setText("MANTENIMIENTO");
         jMenu6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jMenu6.addActionListener(new java.awt.event.ActionListener() {
@@ -198,7 +195,6 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu6);
 
-        jMenu2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\vender.png")); // NOI18N
         jMenu2.setText("VENTA");
         jMenu2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jMenu2.addMenuKeyListener(new javax.swing.event.MenuKeyListener() {
@@ -236,7 +232,6 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\cuentas.png")); // NOI18N
         jMenu8.setText("CUENTAS");
         jMenu8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jMenu8.addMenuKeyListener(new javax.swing.event.MenuKeyListener() {
@@ -274,7 +269,6 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu8);
 
-        jMenu3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jMenu3.setText("CONSULTA");
         jMenu3.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
@@ -312,7 +306,6 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu3);
 
-        menuInventario.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\inventario (1).png")); // NOI18N
         menuInventario.setText("INVENTARIO");
         menuInventario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
 
@@ -327,7 +320,6 @@ public class Menu extends javax.swing.JFrame {
 
         jMenuBar1.add(menuInventario);
 
-        jMenu4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\salir.png")); // NOI18N
         jMenu4.setText("SALIR");
         jMenu4.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -539,11 +531,11 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu8;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem13;
-    private javax.swing.JMenuItem jMenuItem15;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem8;
+    public javax.swing.JMenuItem jMenuItem12;
+    public javax.swing.JMenuItem jMenuItem13;
+    public javax.swing.JMenuItem jMenuItem15;
+    public javax.swing.JMenuItem jMenuItem5;
+    public javax.swing.JMenuItem jMenuItem8;
     public javax.swing.JMenuItem menuArticulo;
     public javax.swing.JMenuItem menuCliente;
     public javax.swing.JMenuItem menuCompra;

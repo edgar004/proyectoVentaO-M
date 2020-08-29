@@ -54,6 +54,10 @@ public class Registro_usuarios extends javax.swing.JFrame {
     }
 
     void limpiar() {
+        
+        carga_tabla_permisos_suarios.carga_tab_permiso_usuario();
+
+           
         idempleado.setText("");
         nombre.setText("");
         usuario.setText("");
@@ -63,6 +67,12 @@ public class Registro_usuarios extends javax.swing.JFrame {
         usuario.setEnabled(false);
         password.setEnabled(false);
         password1.setEnabled(false);
+        guardar_boton.setEnabled(false);
+        boton_modificar.setEnabled(false);
+        
+        
+             
+        
         
     }
 
@@ -100,7 +110,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 crud_usuario.inserta_role_usuarios(id_permiso_usuario, id_usuario, acceso, crear, modificar, borrar, anular, imprimir, exportar);
 
             }
-            carga_tabla_permisos_suarios.limpiar_permiso();
+            carga_tabla_permisos_suarios.carga_tab_permiso_usuario();
              }
        } catch (Exception ex) {
            JOptionPane.showMessageDialog(null, ex);
@@ -241,7 +251,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(153, 153, 153));
         jButton4.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton4.setText("BUSCAR EMPLEADO");
         jButton4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -275,7 +284,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 33, 737, 180));
 
         jLabel10.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\mujer (2).png")); // NOI18N
         jLabel10.setText("REGISTRO DE USUARIO");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(327, 8, -1, 23));
 
@@ -286,7 +294,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         guardar_boton.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        guardar_boton.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\salvar.png")); // NOI18N
         guardar_boton.setText("Guardar");
         guardar_boton.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         guardar_boton.setEnabled(false);
@@ -297,7 +304,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
         });
 
         boton_modificar.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        boton_modificar.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\modifi.png")); // NOI18N
         boton_modificar.setText("Modificar");
         boton_modificar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         boton_modificar.setEnabled(false);
@@ -308,7 +314,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
         });
 
         jButton6.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\anadir (1).png")); // NOI18N
         jButton6.setText("Nuevo");
         jButton6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -318,7 +323,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
         });
 
         jButton3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\salida.png")); // NOI18N
         jButton3.setText("Salir");
         jButton3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -336,9 +340,9 @@ public class Registro_usuarios extends javax.swing.JFrame {
                 .addComponent(guardar_boton, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(boton_modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(48, 48, 48)
                 .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -358,7 +362,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
 
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\lupa.png")); // NOI18N
         jButton5.setText("BUSCAR USUARIOS");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -366,8 +369,6 @@ public class Registro_usuarios extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(753, 215, 210, 60));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Lenovo\\Desktop\\Proyecto duany\\proyectoVentaO-M\\src\\iconos\\usuario.png")); // NOI18N
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 20, -1, 170));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -2, 980, 290));
@@ -431,7 +432,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
         window.setVisible(true);
         activar_campos();
         guardar_boton.setEnabled(false);
-        boton_modificar.setEnabled(true);
+         if(temporal.privilegiosUser[5].modificar==1)boton_modificar.setEnabled(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -541,7 +542,7 @@ public class Registro_usuarios extends javax.swing.JFrame {
         password.setEnabled(true);
         password1.setEnabled(true);
         windows.setVisible(true);
-        guardar_boton.setEnabled(true);
+       if(temporal.privilegiosUser[5].crear==1)guardar_boton.setEnabled(true);
         windows.setLocationRelativeTo(null);
     }//GEN-LAST:event_jButton4ActionPerformed
 

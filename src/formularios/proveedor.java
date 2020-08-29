@@ -221,9 +221,12 @@ public class proveedor extends javax.swing.JFrame {
    residencial.setText("");
    numero_serie();
    representante.requestFocus();
-    jButton1.setEnabled(true);
-    jButton3.setEnabled(false);
-   activar_campos();
+   if(temporal.privilegiosUser[4].crear==1){
+           jButton1.setEnabled(true);
+       activar_campos();
+   }
+       jButton3.setEnabled(false);
+
 }
         
  void limpiar (){
@@ -899,9 +902,11 @@ int validarRNC(){
         buscador_proveedor window = new buscador_proveedor();
         window.setVisible(true);
         window.setLocationRelativeTo(null);
-         activar_campos();
+         if(temporal.privilegiosUser[4].modificar==1){
+             activar_campos();
+            jButton3.setEnabled(true);
+         }
          jButton1.setEnabled(false);
-         jButton3.setEnabled(true);
 
     }//GEN-LAST:event_jButton2ActionPerformed
 

@@ -26,7 +26,6 @@ public class Clientes_mantenimiento extends javax.swing.JFrame {
         
         
         initComponents();
-        
         Date fechaActual = new Date();
         txt_fecha.setDate(fechaActual);
         numero_serie();
@@ -233,7 +232,7 @@ void limpiar02(){
    nombre.requestFocus();
    consumidor.setSelected(false);
    mayor.setSelected(false);
-    activar_campos();
+   if(temporal.privilegiosUser[2].crear==1)activar_campos();
 
 }
 void limpiar(){
@@ -1193,9 +1192,13 @@ int validarRNC(){
         buscar_clientes window = new buscar_clientes();
         window.setVisible(true);
         window.setLocationRelativeTo(null);
-         activar_campos();
-         guardar_boton.setEnabled(false);
+        guardar_boton.setEnabled(false);
+         if(temporal.privilegiosUser[2].modificar==1){
+               activar_campos();
          boton_modificar.setEnabled(true);
+         }
+       
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void cedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cedulaActionPerformed

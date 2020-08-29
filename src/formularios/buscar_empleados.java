@@ -5,6 +5,7 @@ package formularios;
 
 import conectar.conectar;
 import formularios.empleado_1;
+import static formularios.empleado_1.jButton4;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -223,7 +224,10 @@ void cargar(){
             empleado_1.celular.setText(tabla_emp.getValueAt(fila, 10).toString());
             empleado_1.residencial.setText(tabla_emp.getValueAt(fila, 11).toString());
             empleado_1.estado.setSelectedItem(tabla_emp.getValueAt(fila,12).toString());
-            empleado_1.jButton4.setEnabled(true);
+             if(temporal.privilegiosUser[3].modificar==1){
+              empleado_1.jButton4.setEnabled(true);
+         }
+           
             }
              
              this.dispose();
